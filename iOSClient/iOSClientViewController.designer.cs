@@ -28,6 +28,10 @@ namespace iOSClient
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton StartButton { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel StatusLabel { get; set; }
 
 		void ReleaseDesignerOutlets ()
@@ -43,6 +47,10 @@ namespace iOSClient
 			if (OutputLabel != null) {
 				OutputLabel.Dispose ();
 				OutputLabel = null;
+			}
+			if (StartButton != null) {
+				StartButton.Dispose ();
+				StartButton = null;
 			}
 			if (StatusLabel != null) {
 				StatusLabel.Dispose ();
