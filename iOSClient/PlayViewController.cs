@@ -22,9 +22,11 @@ namespace iOSClient
 		{
 		}
 
-        public override void ViewDidLoad()
+        public async override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+			MoveResponse aMove;
 
             // Perform any additional setup after loading the view, typically from a nib.
             client = MobileServiceHelper.DefaultService;
@@ -37,6 +39,24 @@ namespace iOSClient
 			AzureLabel.Text = serviceImple;
 			HumanPiece.Text = humanSymbol;
 			HumanLabel.Text = "Human";
+
+			if (serviceSymbol == "X") {
+				try {
+					aMove = await CallAPIPost (TicBoard);
+
+					OutputLabel.Text = aMove.ToString();
+
+					if (aMove.hasMove) {
+						MakeServiceMove (aMove.getMoveNumber (), serviceSymbol);
+					}
+				}
+				catch (Exception ex) {
+					// Display the exception message for the demo
+					OutputLabel.Text = "";
+					StatusLabel.Text = ex.Message;
+					StatusLabel.BackgroundColor = UIColor.Red;
+				}
+			}
         }
 
 		partial void Bone_TouchUpInside (UIButton sender)
@@ -96,20 +116,18 @@ namespace iOSClient
 
 			try {
 				aMove = await CallAPIPost (TicBoard);
+
+				OutputLabel.Text = aMove.ToString();
+
+				if (aMove.hasMove) {
+					MakeServiceMove (aMove.getMoveNumber (), serviceSymbol);
+				}
 			}
 			catch (Exception ex) {
 				// Display the exception message for the demo
 				OutputLabel.Text = "";
 				StatusLabel.Text = ex.Message;
 				StatusLabel.BackgroundColor = UIColor.Red;
-
-				return;
-			}
-
-			OutputLabel.Text = aMove.ToString();
-
-			if (aMove.hasMove) {
-				MakeServiceMove (aMove.getMoveNumber (), serviceSymbol);
 			}
 		}
 
