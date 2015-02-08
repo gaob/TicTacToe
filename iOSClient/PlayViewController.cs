@@ -42,6 +42,7 @@ namespace iOSClient
 				FirstLabel.Text = serviceImple;
 
 				try {
+					ShowServicePiece();
 					aMove = await CallAPIPost (TicBoard);
 
 					OutputLabel.Text = aMove.ToString ();
@@ -60,8 +61,32 @@ namespace iOSClient
 				SecondLabel.Text = serviceImple;
 				FirstPiece.Text = humanSymbol;
 				FirstLabel.Text = "Human";
+
+				ShowHumanPiece ();
 			}
         }
+
+		void ShowServicePiece ()
+		{
+			if (serviceSymbol == "X") {
+				FirstPiece.Hidden = FirstLabel.Hidden = false;
+				SecondPiece.Hidden = SecondLabel.Hidden = true;
+			} else {
+				FirstPiece.Hidden = FirstLabel.Hidden = true;
+				SecondPiece.Hidden = SecondLabel.Hidden = false;
+			}
+		}
+
+		void ShowHumanPiece ()
+		{
+			if (serviceSymbol == "X") {
+				FirstPiece.Hidden = FirstLabel.Hidden = true;
+				SecondPiece.Hidden = SecondLabel.Hidden = false;
+			} else {
+				FirstPiece.Hidden = FirstLabel.Hidden = false;
+				SecondPiece.Hidden = SecondLabel.Hidden = true;
+			}
+		}
 
 		partial void Bone_TouchUpInside (UIButton sender)
 		{
@@ -119,6 +144,7 @@ namespace iOSClient
 			TicBoard [Bnumber] = symbol;
 
 			try {
+				ShowServicePiece();
 				aMove = await CallAPIPost (TicBoard);
 
 				OutputLabel.Text = aMove.ToString();
@@ -141,6 +167,8 @@ namespace iOSClient
 
 			aButton.SetImage (UIImage.FromFile (symbol=="X" ? XImage : OImage), UIControlState.Normal);
 			TicBoard [Bnumber] = symbol;
+
+			ShowHumanPiece ();
 		}
 
 		async Task<MoveResponse> CallAPIPost(string[] thisBoard)
