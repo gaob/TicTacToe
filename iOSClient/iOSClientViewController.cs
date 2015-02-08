@@ -160,14 +160,17 @@ namespace iOSClient
 				case 0:
 				URLText.Text = MobileServiceHelper.DotNetURL;
 				KeyText.Text = MobileServiceHelper.DotNetKey;
+				PlayViewController.serviceImple = ".NET";
 				break;
 				case 1:
 				URLText.Text = MobileServiceHelper.JavaScriptURL;
 				KeyText.Text = MobileServiceHelper.JavaScriptKey;
+				PlayViewController.serviceImple = "JavaScript";
 				break;
 				case 2:
 				URLText.Text = "";
 				KeyText.Text = "";
+				PlayViewController.serviceImple = "User";
 				break;
 				default:
 				URLText.Text = "Error!";

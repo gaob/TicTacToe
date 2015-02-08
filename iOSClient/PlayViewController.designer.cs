@@ -16,6 +16,14 @@ namespace iOSClient
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel AzureLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel AzurePiece { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton Beight { get; set; }
 
 		[Outlet]
@@ -49,6 +57,14 @@ namespace iOSClient
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton Btwo { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel HumanLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel HumanPiece { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -100,6 +116,14 @@ namespace iOSClient
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (AzureLabel != null) {
+				AzureLabel.Dispose ();
+				AzureLabel = null;
+			}
+			if (AzurePiece != null) {
+				AzurePiece.Dispose ();
+				AzurePiece = null;
+			}
 			if (Beight != null) {
 				Beight.Dispose ();
 				Beight = null;
@@ -135,6 +159,14 @@ namespace iOSClient
 			if (Btwo != null) {
 				Btwo.Dispose ();
 				Btwo = null;
+			}
+			if (HumanLabel != null) {
+				HumanLabel.Dispose ();
+				HumanLabel = null;
+			}
+			if (HumanPiece != null) {
+				HumanPiece.Dispose ();
+				HumanPiece = null;
 			}
 			if (OutputLabel != null) {
 				OutputLabel.Dispose ();

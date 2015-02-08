@@ -11,6 +11,7 @@ namespace iOSClient
 	{
 		public static string humanSymbol = "X";
 		public static string serviceSymbol = "O";
+		public static string serviceImple = ".NET";
 		private string XImage = "x@2x.png";
 		private string OImage = "o@2x.png";
 
@@ -31,6 +32,11 @@ namespace iOSClient
 			for (int i=0;i<=9;i++) {
 				TicBoard[i] = "?";
 			}
+
+			AzurePiece.Text = serviceSymbol;
+			AzureLabel.Text = serviceImple;
+			HumanPiece.Text = humanSymbol;
+			HumanLabel.Text = "Human";
         }
 
 		partial void Bone_TouchUpInside (UIButton sender)
