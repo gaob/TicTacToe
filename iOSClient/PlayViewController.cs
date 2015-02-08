@@ -3,6 +3,7 @@ using MonoTouch.UIKit;
 using System;
 using System.CodeDom.Compiler;
 using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
 
 namespace iOSClient
 {
@@ -77,9 +78,10 @@ namespace iOSClient
 			MakeMove(9, humanSymbol);
 		}
 
-		void MakeMove (int Bnumber, string symbol)
+		async void MakeMove (int Bnumber, string symbol)
 		{
 			UIButton thisButton;
+			MoveResponse aMove;
 
 			switch (Bnumber) {
 				case 1:
@@ -116,13 +118,14 @@ namespace iOSClient
 
 			TicBoard [Bnumber] = symbol;
 
-			CallAPIPost (TicBoard);
+			aMove = await CallAPIPost (TicBoard);
+
+			OutputLabel.Text = aMove.ToString();
 		}
 
-		async void CallAPIPost(string[] thisBoard)
+		async Task<MoveResponse> CallAPIPost(string[] thisBoard)
 		{
-			string moveResult = "";
-			string winnerResult = "";
+			MoveResponse aMove = new MoveResponse ();
 
 			try
 			{
@@ -153,11 +156,11 @@ namespace iOSClient
 				if (resultJson.HasValues)
 				{
 					// Extract the value from the result
-					moveResult = resultJson.Value<string>("move");
-					winnerResult = resultJson.Value<string>("winner");
+					aMove.moveResult = resultJson.Value<string>("move");
+					aMove.winnerResult = resultJson.Value<string>("winner");
 
 					// Set the text block with the result
-					OutputLabel.Text = moveResult + ", " + winnerResult;
+					//OutputLabel.Text = moveResult + ", " + winnerResult;
 				}
 				else
 				{
@@ -177,6 +180,8 @@ namespace iOSClient
 			{
 				// Let the user know the operaion has completed
 			}
+
+			return aMove;
 		}
 	}
 }
