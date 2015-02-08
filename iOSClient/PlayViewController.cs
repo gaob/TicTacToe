@@ -138,6 +138,13 @@ namespace iOSClient
 			UIButton aButton;
 			MoveResponse aMove;
 
+			if (TicBoard [Bnumber] != "?") {
+				StatusLabel.Text = "Please select an empty position";
+				StatusLabel.BackgroundColor = UIColor.Red;
+
+				return;
+			}
+
 			aButton = getButtonFrom (Bnumber);
 
 			aButton.SetImage (UIImage.FromFile (symbol=="X" ? XImage : OImage), UIControlState.Normal);
