@@ -52,7 +52,15 @@ namespace iOSClient
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel OutputLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIView PlayView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel StatusLabel { get; set; }
 
 		[Action ("Beight_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -128,9 +136,17 @@ namespace iOSClient
 				Btwo.Dispose ();
 				Btwo = null;
 			}
+			if (OutputLabel != null) {
+				OutputLabel.Dispose ();
+				OutputLabel = null;
+			}
 			if (PlayView != null) {
 				PlayView.Dispose ();
 				PlayView = null;
+			}
+			if (StatusLabel != null) {
+				StatusLabel.Dispose ();
+				StatusLabel = null;
 			}
 		}
 	}

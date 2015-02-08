@@ -121,16 +121,15 @@ namespace iOSClient
 
 		async void CallAPIPost(string[] thisBoard)
 		{
+			string moveResult = "";
+			string winnerResult = "";
+
 			try
 			{
-				/*
+				// Let the user know something is happening
 				StatusLabel.Text = "POST Request Made, waiting for response...";
 				StatusLabel.TextColor = UIColor.White;
 				StatusLabel.BackgroundColor = UIColor.Blue;
-				*/
-
-				// Let the user know something is happening
-
 
 				// Create the json to send using an anonymous type 
 				JToken payload = JObject.FromObject(new { one = thisBoard[1],
@@ -147,21 +146,18 @@ namespace iOSClient
 
 				// Understanding color in iOS http://www.iosing.com/2011/11/uicolor-understanding-colour-in-ios/
 				// A dark green: http://www.colorpicker.com/
-				/*
 				StatusLabel.BackgroundColor = UIColor.FromRGB(9, 125, 2);
-
 				StatusLabel.Text = "Request completed!";
-				*/
 
 				// Verfiy that a result was returned
 				if (resultJson.HasValues)
 				{
 					// Extract the value from the result
-					string messageResult = resultJson.Value<string>("message");
+					moveResult = resultJson.Value<string>("move");
+					winnerResult = resultJson.Value<string>("winner");
 
 					// Set the text block with the result
-					/*
-					OutputLabel.Text = messageResult;
+					OutputLabel.Text = moveResult + ", " + winnerResult;
 				}
 				else
 				{
@@ -169,19 +165,14 @@ namespace iOSClient
 					StatusLabel.BackgroundColor = UIColor.Orange;
 					OutputLabel.Text = "Nothing returned!";
 				}
-				*/
-				}
 			}
 			catch (Exception ex)
 			{
 				// Display the exception message for the demo
-				/*
 				OutputLabel.Text = "";
 				StatusLabel.Text = ex.Message;
 				StatusLabel.BackgroundColor = UIColor.Red;
-				*/
 			}
-
 			finally
 			{
 				// Let the user know the operaion has completed
