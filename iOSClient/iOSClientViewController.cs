@@ -176,6 +176,22 @@ namespace iOSClient
 			}
 		}
 
+		partial void firstPlayerValueChanged (UISegmentedControl sender)
+		{
+			int selectedID = sender.SelectedSegment;
+
+			if (selectedID == 0)
+			{
+				PlayViewController.humanSymbol = "X";
+				PlayViewController.serviceSymbol = "O";
+			}
+			else
+			{
+				PlayViewController.serviceSymbol = "X";
+				PlayViewController.humanSymbol = "O";
+			}
+		}
+
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);

@@ -32,6 +32,10 @@ namespace iOSClient
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UISegmentedControl MobileServiceSegments { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel OutputLabel { get; set; }
 
 		[Outlet]
@@ -49,6 +53,10 @@ namespace iOSClient
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField URLText { get; set; }
+
+		[Action ("firstPlayerValueChanged:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void firstPlayerValueChanged (UISegmentedControl sender);
 
 		[Action ("segmentValueChanged:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -71,6 +79,10 @@ namespace iOSClient
 			if (KeyText != null) {
 				KeyText.Dispose ();
 				KeyText = null;
+			}
+			if (MobileServiceSegments != null) {
+				MobileServiceSegments.Dispose ();
+				MobileServiceSegments = null;
 			}
 			if (OutputLabel != null) {
 				OutputLabel.Dispose ();

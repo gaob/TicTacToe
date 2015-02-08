@@ -9,8 +9,8 @@ namespace iOSClient
 {
 	partial class PlayViewController : UIViewController
 	{
-		public string humanSymbol = "X";
-		public string serviceSymbol = "O";
+		public static string humanSymbol = "X";
+		public static string serviceSymbol = "O";
 		private string XImage = "x@2x.png";
 		private string OImage = "o@2x.png";
 
