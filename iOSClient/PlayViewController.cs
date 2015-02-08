@@ -2,99 +2,190 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System;
 using System.CodeDom.Compiler;
+using Newtonsoft.Json.Linq;
 
 namespace iOSClient
 {
 	partial class PlayViewController : UIViewController
 	{
-		public string humanSymbol = "x@2x.png";
-		public string serviceSymbol = "o@2x.png";
+		public string humanSymbol = "X";
+		public string serviceSymbol = "O";
+		private string XImage = "x@2x.png";
+		private string OImage = "o@2x.png";
+
+		private MobileServiceHelper client;
+		private string[] TicBoard;
 
 		public PlayViewController (IntPtr handle) : base (handle)
 		{
 		}
 
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            // Perform any additional setup after loading the view, typically from a nib.
+            client = MobileServiceHelper.DefaultService;
+			TicBoard = new string[10];
+			for (int i=0;i<=9;i++) {
+				TicBoard[i] = "?";
+			}
+        }
+
 		partial void Bone_TouchUpInside (UIButton sender)
 		{
-			MakeMove("one", humanSymbol);
+			MakeMove(1, humanSymbol);
 		}
 
 		partial void Btwo_TouchUpInside (UIButton sender)
 		{
-			MakeMove("two", humanSymbol);
+			MakeMove(2, humanSymbol);
 		}
 
 		partial void Bthree_TouchUpInside (UIButton sender)
 		{
-			MakeMove("three", humanSymbol);
+			MakeMove(3, humanSymbol);
 		}
 
 		partial void Bfour_TouchUpInside (UIButton sender)
 		{
-			MakeMove("four", humanSymbol);
+			MakeMove(4, humanSymbol);
 		}
 
 		partial void Bfive_TouchUpInside (UIButton sender)
 		{
-			MakeMove("five", humanSymbol);
+			MakeMove(5, humanSymbol);
 		}
 
 		partial void Bsix_TouchUpInside (UIButton sender)
 		{
-			MakeMove("six", humanSymbol);
+			MakeMove(6, humanSymbol);
 		}
 
 		partial void Bseven_TouchUpInside (UIButton sender)
 		{
-			MakeMove("seven", humanSymbol);
+			MakeMove(7, humanSymbol);
 		}
 
 		partial void Beight_TouchUpInside (UIButton sender)
 		{
-			MakeMove("eight", humanSymbol);
+			MakeMove(8, humanSymbol);
 		}
 
 		partial void Bnine_TouchUpInside (UIButton sender)
 		{
-			MakeMove("nine", humanSymbol);
+			MakeMove(9, humanSymbol);
 		}
 
-		void MakeMove (string Bname, string humanSymbol)
+		void MakeMove (int Bnumber, string symbol)
 		{
 			UIButton thisButton;
 
-			switch (Bname) {
-				case "one":
+			switch (Bnumber) {
+				case 1:
 					thisButton = Bone;
 					break;
-				case "two":
+				case 2:
 					thisButton = Btwo;
 					break;
-				case "three":
+				case 3:
 					thisButton = Bthree;
 					break;
-				case "four":
+				case 4:
 					thisButton = Bfour;
 					break;
-				case "five":
+				case 5:
 					thisButton = Bfive;
 					break;
-				case "six":
+				case 6:
 					thisButton = Bsix;
 					break;
-				case "seven":
+				case 7:
 					thisButton = Bseven;
 					break;
-				case "eight":
+				case 8:
 					thisButton = Beight;
 					break;
-				case "nine":
+				case 9:
 					thisButton = Bnine;
 					break;
 				default:
 					throw new InvalidOperationException();
 			}
-			thisButton.SetImage (UIImage.FromFile (humanSymbol), UIControlState.Normal);
+			thisButton.SetImage (UIImage.FromFile (symbol=="X" ? XImage : OImage), UIControlState.Normal);
+
+			TicBoard [Bnumber] = symbol;
+
+			CallAPIPost (TicBoard);
+		}
+
+		async void CallAPIPost(string[] thisBoard)
+		{
+			try
+			{
+				/*
+				StatusLabel.Text = "POST Request Made, waiting for response...";
+				StatusLabel.TextColor = UIColor.White;
+				StatusLabel.BackgroundColor = UIColor.Blue;
+				*/
+
+				// Let the user know something is happening
+
+
+				// Create the json to send using an anonymous type 
+				JToken payload = JObject.FromObject(new { one = thisBoard[1],
+														  two = thisBoard[2],
+														  three = thisBoard[3],
+														  four = thisBoard[4],
+														  five = thisBoard[5],
+														  six = thisBoard[6],
+														  seven = thisBoard[7],
+														  eight = thisBoard[8],
+														  nine = thisBoard[9]});
+				// Make the call to the hello resource asynchronously using POST verb
+				var resultJson = await client.ServiceClient.InvokeApiAsync("hello", payload);
+
+				// Understanding color in iOS http://www.iosing.com/2011/11/uicolor-understanding-colour-in-ios/
+				// A dark green: http://www.colorpicker.com/
+				/*
+				StatusLabel.BackgroundColor = UIColor.FromRGB(9, 125, 2);
+
+				StatusLabel.Text = "Request completed!";
+				*/
+
+				// Verfiy that a result was returned
+				if (resultJson.HasValues)
+				{
+					// Extract the value from the result
+					string messageResult = resultJson.Value<string>("message");
+
+					// Set the text block with the result
+					/*
+					OutputLabel.Text = messageResult;
+				}
+				else
+				{
+					StatusLabel.TextColor = UIColor.Black;
+					StatusLabel.BackgroundColor = UIColor.Orange;
+					OutputLabel.Text = "Nothing returned!";
+				}
+				*/
+				}
+			}
+			catch (Exception ex)
+			{
+				// Display the exception message for the demo
+				/*
+				OutputLabel.Text = "";
+				StatusLabel.Text = ex.Message;
+				StatusLabel.BackgroundColor = UIColor.Red;
+				*/
+			}
+
+			finally
+			{
+				// Let the user know the operaion has completed
+			}
 		}
 	}
 }
