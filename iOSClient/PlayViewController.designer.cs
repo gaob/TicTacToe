@@ -54,9 +54,41 @@ namespace iOSClient
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIView PlayView { get; set; }
 
-		[Action ("UIButton263_TouchUpInside:")]
+		[Action ("Beight_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void UIButton263_TouchUpInside (UIButton sender);
+		partial void Beight_TouchUpInside (UIButton sender);
+
+		[Action ("Bfive_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void Bfive_TouchUpInside (UIButton sender);
+
+		[Action ("Bfour_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void Bfour_TouchUpInside (UIButton sender);
+
+		[Action ("Bnine_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void Bnine_TouchUpInside (UIButton sender);
+
+		[Action ("Bone_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void Bone_TouchUpInside (UIButton sender);
+
+		[Action ("Bseven_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void Bseven_TouchUpInside (UIButton sender);
+
+		[Action ("Bsix_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void Bsix_TouchUpInside (UIButton sender);
+
+		[Action ("Bthree_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void Bthree_TouchUpInside (UIButton sender);
+
+		[Action ("Btwo_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void Btwo_TouchUpInside (UIButton sender);
 
 		void ReleaseDesignerOutlets ()
 		{

@@ -14,9 +14,49 @@ namespace iOSClient
 		{
 		}
 
-		partial void UIButton263_TouchUpInside (UIButton sender)
+		partial void Bone_TouchUpInside (UIButton sender)
 		{
 			MakeMove("one", humanSymbol);
+		}
+
+		partial void Btwo_TouchUpInside (UIButton sender)
+		{
+			MakeMove("two", humanSymbol);
+		}
+
+		partial void Bthree_TouchUpInside (UIButton sender)
+		{
+			MakeMove("three", humanSymbol);
+		}
+
+		partial void Bfour_TouchUpInside (UIButton sender)
+		{
+			MakeMove("four", humanSymbol);
+		}
+
+		partial void Bfive_TouchUpInside (UIButton sender)
+		{
+			MakeMove("five", humanSymbol);
+		}
+
+		partial void Bsix_TouchUpInside (UIButton sender)
+		{
+			MakeMove("six", humanSymbol);
+		}
+
+		partial void Bseven_TouchUpInside (UIButton sender)
+		{
+			MakeMove("seven", humanSymbol);
+		}
+
+		partial void Beight_TouchUpInside (UIButton sender)
+		{
+			MakeMove("eight", humanSymbol);
+		}
+
+		partial void Bnine_TouchUpInside (UIButton sender)
+		{
+			MakeMove("nine", humanSymbol);
 		}
 
 		void MakeMove (string Bname, string humanSymbol)
