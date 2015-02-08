@@ -88,7 +88,17 @@ namespace iOSClient
 
 			TicBoard [Bnumber] = symbol;
 
-			aMove = await CallAPIPost (TicBoard);
+			try {
+				aMove = await CallAPIPost (TicBoard);
+			}
+			catch (Exception ex) {
+				// Display the exception message for the demo
+				OutputLabel.Text = "";
+				StatusLabel.Text = ex.Message;
+				StatusLabel.BackgroundColor = UIColor.Red;
+
+				return;
+			}
 
 			OutputLabel.Text = aMove.ToString();
 
@@ -154,6 +164,8 @@ namespace iOSClient
 				OutputLabel.Text = "";
 				StatusLabel.Text = ex.Message;
 				StatusLabel.BackgroundColor = UIColor.Red;
+
+				throw ex;
 			}
 			finally
 			{
