@@ -308,7 +308,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="461" fixedFrame="YES">
-                                <rect key="frame" x="8" y="128" width="42" height="21"/>
+                                <rect key="frame" x="8" y="128" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -330,10 +330,10 @@
                         <outlet property="Bnine" destination="297" id="name-outlet-297"/>
                         <outlet property="OutputLabel" destination="390" id="name-outlet-390"/>
                         <outlet property="StatusLabel" destination="399" id="name-outlet-399"/>
-                        <outlet property="AzurePiece" destination="450" id="name-outlet-450"/>
-                        <outlet property="AzureLabel" destination="457" id="name-outlet-457"/>
-                        <outlet property="HumanPiece" destination="460" id="name-outlet-460"/>
-                        <outlet property="HumanLabel" destination="461" id="name-outlet-461"/>
+                        <outlet property="SecondPiece" destination="450" id="name-outlet-450"/>
+                        <outlet property="SecondLabel" destination="457" id="name-outlet-457"/>
+                        <outlet property="FirstPiece" destination="460" id="name-outlet-460"/>
+                        <outlet property="FirstLabel" destination="461" id="name-outlet-461"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="130" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -6,7 +6,7 @@ namespace iOSClient
 	{
 		public string moveResult { get; set; }
 		public string winnerResult { get; set; }
-		public bool hasMove { get { return winnerResult == "inconclusive" || winnerResult == "Tie"; } }
+		public bool hasMove { get { return moveResult != @"n/a"; } }
 
 		public MoveResponse ()
 		{

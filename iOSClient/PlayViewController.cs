@@ -34,28 +34,32 @@ namespace iOSClient
 			for (int i=0;i<=9;i++) {
 				TicBoard[i] = "?";
 			}
-
-			AzurePiece.Text = serviceSymbol;
-			AzureLabel.Text = serviceImple;
-			HumanPiece.Text = humanSymbol;
-			HumanLabel.Text = "Human";
-
+				
 			if (serviceSymbol == "X") {
+				SecondPiece.Text = humanSymbol;
+				SecondLabel.Text = "Human";
+				FirstPiece.Text = serviceSymbol;
+				FirstLabel.Text = serviceImple;
+
 				try {
 					aMove = await CallAPIPost (TicBoard);
 
-					OutputLabel.Text = aMove.ToString();
+					OutputLabel.Text = aMove.ToString ();
 
 					if (aMove.hasMove) {
 						MakeServiceMove (aMove.getMoveNumber (), serviceSymbol);
 					}
-				}
-				catch (Exception ex) {
+				} catch (Exception ex) {
 					// Display the exception message for the demo
 					OutputLabel.Text = "";
 					StatusLabel.Text = ex.Message;
 					StatusLabel.BackgroundColor = UIColor.Red;
 				}
+			} else {
+				SecondPiece.Text = serviceSymbol;
+				SecondLabel.Text = serviceImple;
+				FirstPiece.Text = humanSymbol;
+				FirstLabel.Text = "Human";
 			}
         }
 

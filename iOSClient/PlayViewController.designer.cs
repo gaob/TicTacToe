@@ -16,14 +16,6 @@ namespace iOSClient
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel AzureLabel { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel AzurePiece { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton Beight { get; set; }
 
 		[Outlet]
@@ -60,11 +52,11 @@ namespace iOSClient
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel HumanLabel { get; set; }
+		UILabel FirstLabel { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel HumanPiece { get; set; }
+		UILabel FirstPiece { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -73,6 +65,14 @@ namespace iOSClient
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIView PlayView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel SecondLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel SecondPiece { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -116,14 +116,6 @@ namespace iOSClient
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (AzureLabel != null) {
-				AzureLabel.Dispose ();
-				AzureLabel = null;
-			}
-			if (AzurePiece != null) {
-				AzurePiece.Dispose ();
-				AzurePiece = null;
-			}
 			if (Beight != null) {
 				Beight.Dispose ();
 				Beight = null;
@@ -160,13 +152,13 @@ namespace iOSClient
 				Btwo.Dispose ();
 				Btwo = null;
 			}
-			if (HumanLabel != null) {
-				HumanLabel.Dispose ();
-				HumanLabel = null;
+			if (FirstLabel != null) {
+				FirstLabel.Dispose ();
+				FirstLabel = null;
 			}
-			if (HumanPiece != null) {
-				HumanPiece.Dispose ();
-				HumanPiece = null;
+			if (FirstPiece != null) {
+				FirstPiece.Dispose ();
+				FirstPiece = null;
 			}
 			if (OutputLabel != null) {
 				OutputLabel.Dispose ();
@@ -175,6 +167,14 @@ namespace iOSClient
 			if (PlayView != null) {
 				PlayView.Dispose ();
 				PlayView = null;
+			}
+			if (SecondLabel != null) {
+				SecondLabel.Dispose ();
+				SecondLabel = null;
+			}
+			if (SecondPiece != null) {
+				SecondPiece.Dispose ();
+				SecondPiece = null;
 			}
 			if (StatusLabel != null) {
 				StatusLabel.Dispose ();
