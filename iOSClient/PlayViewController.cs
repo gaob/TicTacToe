@@ -38,6 +38,7 @@ namespace iOSClient
 			if (serviceSymbol == "X") {
 				SecondPiece.Text = humanSymbol;
 				SecondLabel.Text = "Human";
+				SecondLabel.TextColor = UIColor.Yellow;
 				FirstPiece.Text = serviceSymbol;
 				FirstLabel.Text = serviceImple;
 
@@ -61,6 +62,7 @@ namespace iOSClient
 				SecondLabel.Text = serviceImple;
 				FirstPiece.Text = humanSymbol;
 				FirstLabel.Text = "Human";
+				FirstLabel.TextColor = UIColor.Yellow;
 
 				ShowHumanPiece ();
 			}
@@ -158,6 +160,11 @@ namespace iOSClient
 
 				if (aMove.hasMove) {
 					MakeServiceMove (aMove.getMoveNumber (), serviceSymbol);
+				}
+
+				if (aMove.isTie) {
+					OutputLabel.Text = "Tied Game";
+					OutputLabel.TextColor = UIColor.LightGray;
 				}
 			}
 			catch (Exception ex) {
