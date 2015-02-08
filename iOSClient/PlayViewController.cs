@@ -84,8 +84,8 @@ namespace iOSClient
 			MoveResponse aMove;
 
 			aButton = getButtonFrom (Bnumber);
-			aButton.SetImage (UIImage.FromFile (symbol=="X" ? XImage : OImage), UIControlState.Normal);
 
+			aButton.SetImage (UIImage.FromFile (symbol=="X" ? XImage : OImage), UIControlState.Normal);
 			TicBoard [Bnumber] = symbol;
 
 			try {
@@ -110,6 +110,7 @@ namespace iOSClient
 			UIButton aButton = getButtonFrom (Bnumber);
 
 			aButton.SetImage (UIImage.FromFile (symbol=="X" ? XImage : OImage), UIControlState.Normal);
+			TicBoard [Bnumber] = symbol;
 		}
 
 		async Task<MoveResponse> CallAPIPost(string[] thisBoard)
