@@ -8,8 +8,12 @@ namespace iOSClient
 
         private static MobileServiceHelper _instance;
 
-		const string applicationURL = @"https://dotnetbackend.azure-mobile.net/";
-		const string applicationKey = @"pclFSlQkkDCfWjzjzwBevXDNqNewdw99";
+		private const string DotNetURL = @"https://dotnetbackend.azure-mobile.net/";
+		private const string DotNetKey = @"pclFSlQkkDCfWjzjzwBevXDNqNewdw99";
+		private const string JavaScriptURL = @"https://javascriptbackend.azure-mobile.net/";
+		private const string JavaScriptKey = @"BArzkABLhgZnNhjvxnESoRpSjEHQEA10";
+		public string applicationURL = DotNetURL;
+		public string applicationKey = DotNetKey;
 
         private readonly MobileServiceClient _client;
 
@@ -26,6 +30,21 @@ namespace iOSClient
         private static volatile object _syncRoot = new object();
 
         public MobileServiceClient ServiceClient { get { return _client; } }
+
+		public void selectDotNet()
+		{
+			_client = new MobileServiceClient(DotNetURL, DotNetKey);
+		}
+
+		public void selectJavaScript()
+		{
+			_client = new MobileServiceClient(JavaScriptURL, JavaScriptKey);
+		}
+
+		public void selectUser(string URL, string Key)
+		{
+			_client = new MobileServiceClient(URL, Key);
+		}
 
         public static MobileServiceHelper DefaultService
         {
