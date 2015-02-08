@@ -8,6 +8,7 @@ namespace iOSClient
 		public string winnerResult { get; set; }
 		public bool hasMove { get { return moveResult != "n/a"; } }
 		public bool isTie { get { return winnerResult == "Tie"; } }
+		public bool isWin { get { return winnerResult == "O" || winnerResult == "X"; } }
 
 		public MoveResponse ()
 		{

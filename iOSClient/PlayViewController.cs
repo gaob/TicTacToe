@@ -51,6 +51,7 @@ namespace iOSClient
 					if (aMove.hasMove) {
 						MakeServiceMove (aMove.getMoveNumber (), serviceSymbol);
 					}
+					ShowHumanPiece ();
 				} catch (Exception ex) {
 					// Display the exception message for the demo
 					OutputLabel.Text = "";
@@ -161,10 +162,18 @@ namespace iOSClient
 				if (aMove.hasMove) {
 					MakeServiceMove (aMove.getMoveNumber (), serviceSymbol);
 				}
+				ShowHumanPiece ();
 
 				if (aMove.isTie) {
 					OutputLabel.Text = "Tied Game";
 					OutputLabel.TextColor = UIColor.LightGray;
+				} else if (aMove.isWin) {
+					if (aMove.winnerResult == "X") {
+						OutputLabel.Text = "<-Winner";
+					} else {
+						OutputLabel.Text = "Winner->";
+					}
+					OutputLabel.TextColor = UIColor.Green;
 				}
 			}
 			catch (Exception ex) {
@@ -181,8 +190,6 @@ namespace iOSClient
 
 			aButton.SetImage (UIImage.FromFile (symbol=="X" ? XImage : OImage), UIControlState.Normal);
 			TicBoard [Bnumber] = symbol;
-
-			ShowHumanPiece ();
 		}
 
 		async Task<MoveResponse> CallAPIPost(string[] thisBoard)
