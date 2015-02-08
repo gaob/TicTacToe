@@ -98,6 +98,9 @@
     <Compile Include="iOSClientViewController.cs" />
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\o%402x.png" />
+    <BundleResource Include="Resources\x%402x.png" />
+    <BundleResource Include="Resources\playTab%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.WindowsAzure.Mobile.SQLiteStore">

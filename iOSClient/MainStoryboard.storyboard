@@ -110,13 +110,118 @@
                         <viewControllerLayoutGuide type="top" id="125"/>
                         <viewControllerLayoutGuide type="bottom" id="126"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="129">
+                    <view key="view" contentMode="center" id="129">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" customColorSpace="calibratedWhite" cocoaTouchSystemColor="darkTextColor"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="362" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="playTab.png">
+                                <rect key="frame" x="2" y="190" width="316" height="315"/>
+                            </imageView>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="263" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" fixedFrame="YES">
+                                <rect key="frame" x="8" y="190" width="88" height="88"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <state key="normal" title="" image="x.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.19215686274509805" green="0.30588235294117649" blue="0.52156862745098043" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton263_TouchUpInside:" destination="128" id="266" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="276" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" fixedFrame="YES">
+                                <rect key="frame" x="116" y="190" width="88" height="88"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <state key="normal" title="" image="x.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton263_TouchUpInside:" destination="278" id="277" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="279" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" fixedFrame="YES">
+                                <rect key="frame" x="230" y="190" width="88" height="88"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <state key="normal" title="" image="x.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton263_TouchUpInside:" destination="281" id="280" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="282" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" fixedFrame="YES">
+                                <rect key="frame" x="8" y="303" width="88" height="88"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <state key="normal" title="" image="x.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton263_TouchUpInside:" destination="284" id="283" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="285" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" fixedFrame="YES">
+                                <rect key="frame" x="116" y="303" width="88" height="88"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <state key="normal" title="" image="x.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton263_TouchUpInside:" destination="287" id="286" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="288" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" fixedFrame="YES">
+                                <rect key="frame" x="230" y="303" width="88" height="88"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <state key="normal" title="" image="x.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton263_TouchUpInside:" destination="290" id="289" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="291" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" fixedFrame="YES">
+                                <rect key="frame" x="8" y="417" width="88" height="88"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <state key="normal" title="" image="x.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton263_TouchUpInside:" destination="293" id="292" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="294" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" fixedFrame="YES">
+                                <rect key="frame" x="116" y="417" width="88" height="88"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <state key="normal" title="" image="x.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton263_TouchUpInside:" destination="296" id="295" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" id="297" translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" fixedFrame="YES">
+                                <rect key="frame" x="230" y="417" width="88" height="88"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <state key="normal" title="" image="x.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton263_TouchUpInside:" destination="299" id="298" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
                     </view>
                     <connections>
                         <outlet property="PlayView" destination="129" id="name-outlet-129"/>
+                        <outlet property="Bone" destination="263" id="name-outlet-263"/>
+                        <outlet property="Btwo" destination="276" id="name-outlet-276"/>
+                        <outlet property="Bthree" destination="279" id="name-outlet-279"/>
+                        <outlet property="Bfour" destination="282" id="name-outlet-282"/>
+                        <outlet property="Bfive" destination="285" id="name-outlet-285"/>
+                        <outlet property="Bsix" destination="288" id="name-outlet-288"/>
+                        <outlet property="Bseven" destination="291" id="name-outlet-291"/>
+                        <outlet property="Beight" destination="294" id="name-outlet-294"/>
+                        <outlet property="Bnine" destination="297" id="name-outlet-297"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="130" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,5 +236,9 @@
     </simulatedMetricsContainer>
     <resources>
         <image name="Default-568h.png" width="640" height="1136"/>
+        <image name="o.png" width="88" height="88"/>
+        <image name="smallO.png" width="40" height="40"/>
+        <image name="x.png" width="88" height="88"/>
+        <image name="playTab.png" width="52" height="52"/>
     </resources>
 </document>
