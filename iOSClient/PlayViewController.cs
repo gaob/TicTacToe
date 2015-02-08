@@ -72,23 +72,33 @@ namespace iOSClient
 		void ShowServicePiece ()
 		{
 			if (serviceSymbol == "X") {
-				FirstPiece.Hidden = FirstLabel.Hidden = false;
-				SecondPiece.Hidden = SecondLabel.Hidden = true;
+				ShowFirstPiece (true);
+				ShowSecondPiece (false);
 			} else {
-				FirstPiece.Hidden = FirstLabel.Hidden = true;
-				SecondPiece.Hidden = SecondLabel.Hidden = false;
+				ShowFirstPiece (false);
+				ShowSecondPiece (true);
 			}
 		}
 
 		void ShowHumanPiece ()
 		{
 			if (serviceSymbol == "X") {
-				FirstPiece.Hidden = FirstLabel.Hidden = true;
-				SecondPiece.Hidden = SecondLabel.Hidden = false;
+				ShowFirstPiece (false);
+				ShowSecondPiece (true);
 			} else {
-				FirstPiece.Hidden = FirstLabel.Hidden = false;
-				SecondPiece.Hidden = SecondLabel.Hidden = true;
+				ShowFirstPiece (true);
+				ShowSecondPiece (false);
 			}
+		}
+
+		void ShowFirstPiece(bool show)
+		{
+			FirstPiece.Hidden = FirstLabel.Hidden = !show;
+		}
+
+		void ShowSecondPiece(bool show)
+		{
+			SecondPiece.Hidden = SecondLabel.Hidden = !show;
 		}
 
 		partial void Bone_TouchUpInside (UIButton sender)
@@ -136,6 +146,11 @@ namespace iOSClient
 			MakeHumanMove(9, humanSymbol);
 		}
 
+		partial void BQuitGame_TouchUpInside (UIButton sender)
+		{
+			this.NavigationController.PopViewControllerAnimated(true);
+		}
+
 		async void MakeHumanMove (int Bnumber, string symbol)
 		{
 			UIButton aButton;
@@ -170,9 +185,14 @@ namespace iOSClient
 				} else if (aMove.isWin) {
 					if (aMove.winnerResult == "X") {
 						OutputLabel.Text = "<-Winner";
+						ShowFirstPiece(true);
+						ShowSecondPiece(false);
 					} else {
 						OutputLabel.Text = "Winner->";
+						ShowFirstPiece(false);
+						ShowSecondPiece(true);
 					}
+
 					OutputLabel.TextColor = UIColor.Green;
 				}
 			}
@@ -199,7 +219,7 @@ namespace iOSClient
 			try
 			{
 				// Let the user know something is happening
-				StatusLabel.Text = "POST Request Made, waiting for response...";
+				StatusLabel.Text = "Azure making her move, please wait...!";
 				StatusLabel.TextColor = UIColor.White;
 				StatusLabel.BackgroundColor = UIColor.Blue;
 

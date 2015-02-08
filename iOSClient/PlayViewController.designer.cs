@@ -36,6 +36,10 @@ namespace iOSClient
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton BQuitGame { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton Bseven { get; set; }
 
 		[Outlet]
@@ -98,6 +102,10 @@ namespace iOSClient
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void Bone_TouchUpInside (UIButton sender);
 
+		[Action ("BQuitGame_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void BQuitGame_TouchUpInside (UIButton sender);
+
 		[Action ("Bseven_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void Bseven_TouchUpInside (UIButton sender);
@@ -135,6 +143,10 @@ namespace iOSClient
 			if (Bone != null) {
 				Bone.Dispose ();
 				Bone = null;
+			}
+			if (BQuitGame != null) {
+				BQuitGame.Dispose ();
+				BQuitGame = null;
 			}
 			if (Bseven != null) {
 				Bseven.Dispose ();
