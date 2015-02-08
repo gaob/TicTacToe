@@ -151,6 +151,30 @@ namespace iOSClient
             }
         }
 
+		partial void segmentValueChanged (UISegmentedControl sender)
+		{
+			int selectedID = sender.SelectedSegment;
+
+			switch (selectedID)
+			{
+				case 0:
+				URLText.Text = MobileServiceHelper.DotNetURL;
+				KeyText.Text = MobileServiceHelper.DotNetKey;
+				break;
+				case 1:
+				URLText.Text = MobileServiceHelper.JavaScriptURL;
+				KeyText.Text = MobileServiceHelper.JavaScriptKey;
+				break;
+				case 2:
+				URLText.Text = "";
+				KeyText.Text = "";
+				break;
+				default:
+				URLText.Text = "Error!";
+				KeyText.Text = "Error!";
+				return;
+			}
+		}
 
         public override void ViewWillAppear(bool animated)
         {

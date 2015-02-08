@@ -50,6 +50,10 @@ namespace iOSClient
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField URLText { get; set; }
 
+		[Action ("segmentValueChanged:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void segmentValueChanged (UISegmentedControl sender);
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (CallAPIGetButton != null) {
