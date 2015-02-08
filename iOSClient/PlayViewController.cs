@@ -102,7 +102,9 @@ namespace iOSClient
 
 			OutputLabel.Text = aMove.ToString();
 
-			MakeServiceMove (aMove.getMoveNumber (), serviceSymbol);
+			if (aMove.hasMove) {
+				MakeServiceMove (aMove.getMoveNumber (), serviceSymbol);
+			}
 		}
 
 		void MakeServiceMove (int Bnumber, string symbol)
