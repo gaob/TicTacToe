@@ -15,7 +15,7 @@ namespace iOSClient
 		public string applicationURL = DotNetURL;
 		public string applicationKey = DotNetKey;
 
-        private readonly MobileServiceClient _client;
+        private MobileServiceClient _client;
 
         private MobileServiceHelper()
         {

@@ -39,6 +39,8 @@ namespace iOSClient
             CallAPIGetButton.TouchUpInside += CallAPIGetButton_TouchUpInside;
             CallAPIPostButton.TouchUpInside += CallAPIPostButton_TouchUpInside;
 
+			URLText.Text = client.applicationURL;
+			KeyText.Text = client.applicationKey;
         }
 
         async void CallAPIGetButton_TouchUpInside(object sender, EventArgs e)

@@ -24,6 +24,14 @@ namespace iOSClient
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel KeyLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextField KeyText { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel OutputLabel { get; set; }
 
 		[Outlet]
@@ -34,6 +42,14 @@ namespace iOSClient
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel StatusLabel { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel URLLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextField URLText { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (CallAPIGetButton != null) {
@@ -43,6 +59,14 @@ namespace iOSClient
 			if (CallAPIPostButton != null) {
 				CallAPIPostButton.Dispose ();
 				CallAPIPostButton = null;
+			}
+			if (KeyLabel != null) {
+				KeyLabel.Dispose ();
+				KeyLabel = null;
+			}
+			if (KeyText != null) {
+				KeyText.Dispose ();
+				KeyText = null;
 			}
 			if (OutputLabel != null) {
 				OutputLabel.Dispose ();
@@ -55,6 +79,14 @@ namespace iOSClient
 			if (StatusLabel != null) {
 				StatusLabel.Dispose ();
 				StatusLabel = null;
+			}
+			if (URLLabel != null) {
+				URLLabel.Dispose ();
+				URLLabel = null;
+			}
+			if (URLText != null) {
+				URLText.Dispose ();
+				URLText = null;
 			}
 		}
 	}
