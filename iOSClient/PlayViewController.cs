@@ -35,92 +35,71 @@ namespace iOSClient
 
 		partial void Bone_TouchUpInside (UIButton sender)
 		{
-			MakeMove(1, humanSymbol);
+			MakeHumanMove(1, humanSymbol);
 		}
 
 		partial void Btwo_TouchUpInside (UIButton sender)
 		{
-			MakeMove(2, humanSymbol);
+			MakeHumanMove(2, humanSymbol);
 		}
 
 		partial void Bthree_TouchUpInside (UIButton sender)
 		{
-			MakeMove(3, humanSymbol);
+			MakeHumanMove(3, humanSymbol);
 		}
 
 		partial void Bfour_TouchUpInside (UIButton sender)
 		{
-			MakeMove(4, humanSymbol);
+			MakeHumanMove(4, humanSymbol);
 		}
 
 		partial void Bfive_TouchUpInside (UIButton sender)
 		{
-			MakeMove(5, humanSymbol);
+			MakeHumanMove(5, humanSymbol);
 		}
 
 		partial void Bsix_TouchUpInside (UIButton sender)
 		{
-			MakeMove(6, humanSymbol);
+			MakeHumanMove(6, humanSymbol);
 		}
 
 		partial void Bseven_TouchUpInside (UIButton sender)
 		{
-			MakeMove(7, humanSymbol);
+			MakeHumanMove(7, humanSymbol);
 		}
 
 		partial void Beight_TouchUpInside (UIButton sender)
 		{
-			MakeMove(8, humanSymbol);
+			MakeHumanMove(8, humanSymbol);
 		}
 
 		partial void Bnine_TouchUpInside (UIButton sender)
 		{
-			MakeMove(9, humanSymbol);
+			MakeHumanMove(9, humanSymbol);
 		}
 
-		async void MakeMove (int Bnumber, string symbol)
+		async void MakeHumanMove (int Bnumber, string symbol)
 		{
-			UIButton thisButton;
+			UIButton aButton;
 			MoveResponse aMove;
 
-			switch (Bnumber) {
-				case 1:
-					thisButton = Bone;
-					break;
-				case 2:
-					thisButton = Btwo;
-					break;
-				case 3:
-					thisButton = Bthree;
-					break;
-				case 4:
-					thisButton = Bfour;
-					break;
-				case 5:
-					thisButton = Bfive;
-					break;
-				case 6:
-					thisButton = Bsix;
-					break;
-				case 7:
-					thisButton = Bseven;
-					break;
-				case 8:
-					thisButton = Beight;
-					break;
-				case 9:
-					thisButton = Bnine;
-					break;
-				default:
-					throw new InvalidOperationException();
-			}
-			thisButton.SetImage (UIImage.FromFile (symbol=="X" ? XImage : OImage), UIControlState.Normal);
+			aButton = getButtonFrom (Bnumber);
+			aButton.SetImage (UIImage.FromFile (symbol=="X" ? XImage : OImage), UIControlState.Normal);
 
 			TicBoard [Bnumber] = symbol;
 
 			aMove = await CallAPIPost (TicBoard);
 
 			OutputLabel.Text = aMove.ToString();
+
+			MakeServiceMove (aMove.getMoveNumber (), serviceSymbol);
+		}
+
+		void MakeServiceMove (int Bnumber, string symbol)
+		{
+			UIButton aButton = getButtonFrom (Bnumber);
+
+			aButton.SetImage (UIImage.FromFile (symbol=="X" ? XImage : OImage), UIControlState.Normal);
 		}
 
 		async Task<MoveResponse> CallAPIPost(string[] thisBoard)
@@ -182,6 +161,45 @@ namespace iOSClient
 			}
 
 			return aMove;
+		}
+
+		UIButton getButtonFrom(int Bnumber)
+		{
+			UIButton aButton = null;
+
+			switch (Bnumber) {
+			case 1:
+				aButton = Bone;
+				break;
+			case 2:
+				aButton = Btwo;
+				break;
+			case 3:
+				aButton = Bthree;
+				break;
+			case 4:
+				aButton = Bfour;
+				break;
+			case 5:
+				aButton = Bfive;
+				break;
+			case 6:
+				aButton = Bsix;
+				break;
+			case 7:
+				aButton = Bseven;
+				break;
+			case 8:
+				aButton = Beight;
+				break;
+			case 9:
+				aButton = Bnine;
+				break;
+			default:
+				throw new InvalidOperationException();
+			}
+
+			return aButton;
 		}
 	}
 }
