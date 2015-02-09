@@ -74,7 +74,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue id="255" destination="128" kind="push"/>
+                                    <action selector="StartButton_TouchUpInside:" destination="vXZ-lx-hvc" id="484" eventType="touchUpInside"/>
                                 </connections>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
@@ -149,7 +149,7 @@
         </scene>
         <scene sceneID="127">
             <objects>
-                <viewController id="128" sceneMemberID="viewController" customClass="PlayViewController" title="Game">
+                <viewController id="128" sceneMemberID="viewController" customClass="PlayViewController" title="Game" storyboardIdentifier="PlayViewController">
                     <view key="view" contentMode="center" id="129">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

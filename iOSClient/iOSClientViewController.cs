@@ -195,6 +195,28 @@ namespace iOSClient
 			}
 		}
 
+		partial void StartButton_TouchUpInside (UIButton sender)
+		{
+			try
+			{
+				client.selectUser(URLText.Text, KeyText.Text);
+			}
+			catch (Exception ex)
+			{
+				URLText.Text = "Mobile Service Access Error!";
+				KeyText.Text = ex.Message;
+
+				return;
+			}
+
+			PlayViewController aViewController = this.Storyboard.InstantiateViewController("PlayViewController") as PlayViewController;
+			if (aViewController != null) {
+				this.NavigationController.PushViewController(aViewController, true);
+			} else {
+				URLText.Text = "Start Game Board Error!";
+			}
+		}
+
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);

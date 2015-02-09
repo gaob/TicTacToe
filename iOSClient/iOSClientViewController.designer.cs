@@ -62,6 +62,10 @@ namespace iOSClient
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void segmentValueChanged (UISegmentedControl sender);
 
+		[Action ("StartButton_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void StartButton_TouchUpInside (UIButton sender);
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (CallAPIGetButton != null) {

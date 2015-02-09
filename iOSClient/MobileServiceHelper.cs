@@ -24,7 +24,6 @@ namespace iOSClient
 
             // Initialize the Mobile Service client with your URL and key
             _client = new MobileServiceClient(applicationURL, applicationKey);
-
         }
 
         private static volatile object _syncRoot = new object();
