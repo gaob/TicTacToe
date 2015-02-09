@@ -16,6 +16,10 @@ namespace iOSClient
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton Bcover { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton Beight { get; set; }
 
 		[Outlet]
@@ -90,6 +94,10 @@ namespace iOSClient
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel StatusLabel { get; set; }
 
+		[Action ("Bcover_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void Bcover_TouchUpInside (UIButton sender);
+
 		[Action ("Beight_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void Beight_TouchUpInside (UIButton sender);
@@ -132,6 +140,10 @@ namespace iOSClient
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (Bcover != null) {
+				Bcover.Dispose ();
+				Bcover = null;
+			}
 			if (Beight != null) {
 				Beight.Dispose ();
 				Beight = null;

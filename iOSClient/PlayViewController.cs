@@ -159,6 +159,11 @@ namespace iOSClient
 		{
 			this.NavigationController.PopViewControllerAnimated(true);
 		}
+			
+		partial void Bcover_TouchUpInside (UIButton sender)
+		{
+			this.NavigationController.PopViewControllerAnimated(true);
+		}
 
 		async void MakeHumanMove (int Bnumber, string symbol)
 		{
@@ -191,6 +196,7 @@ namespace iOSClient
 				if (aMove.isTie) {
 					OutputLabel.Text = "Tied Game";
 					SetAllSymbol(UIColor.LightGray);
+					Bcover.Hidden = false;
 				} else if (aMove.isWin) {
 					if (aMove.winnerResult == "X") {
 						OutputLabel.Text = "<-Winner";
@@ -203,6 +209,7 @@ namespace iOSClient
 					}
 
 					SetThreeSymbol(UIColor.Green, UIColor.Gray);
+					Bcover.Hidden = false;
 				}
 			}
 			catch (Exception ex) {
