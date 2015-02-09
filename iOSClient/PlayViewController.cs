@@ -18,6 +18,8 @@ namespace iOSClient
 		private MobileServiceHelper client;
 		private string[] TicBoard;
 
+		private int[,] Direction = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 1, 4, 7 }, { 2, 5, 8 }, { 3, 6, 9 }, { 1, 5, 9 }, { 3, 5, 7 } };
+
 		public PlayViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -181,9 +183,7 @@ namespace iOSClient
 
 				if (aMove.isTie) {
 					OutputLabel.Text = "Tied Game";
-					Bone.TintColor = Btwo.TintColor = Bthree.TintColor = 
-						Bfour.TintColor = Bfive.TintColor = Bsix.TintColor = 
-						Bseven.TintColor = Beight.TintColor = Bnine.TintColor = UIColor.LightGray;
+					SetAllSymbol(UIColor.LightGray);
 				} else if (aMove.isWin) {
 					if (aMove.winnerResult == "X") {
 						OutputLabel.Text = "<-Winner";
@@ -195,7 +195,7 @@ namespace iOSClient
 						ShowSecondPiece(true);
 					}
 
-					OutputLabel.TextColor = UIColor.Green;
+					SetThreeSymbol(UIColor.Green, UIColor.Gray);
 				}
 			}
 			catch (Exception ex) {
@@ -314,6 +314,41 @@ namespace iOSClient
 			}
 
 			return aButton;
+		}
+
+		void SetAllSymbol (UIColor color)
+		{
+			Bone.TintColor = Btwo.TintColor = Bthree.TintColor = 
+				Bfour.TintColor = Bfive.TintColor = Bsix.TintColor = 
+					Bseven.TintColor = Beight.TintColor = Bnine.TintColor = color;
+		}
+
+		void SetThreeSymbol (UIColor color, UIColor other_color)
+		{
+			SetAllSymbol(other_color);
+
+			for (int i=0;i<8;i++)
+			{
+				if (DetectWinner(TicBoard, i)) {
+					getButtonFrom(Direction[i, 0]).TintColor = color;
+					getButtonFrom(Direction[i, 1]).TintColor = color;
+					getButtonFrom(Direction[i, 2]).TintColor = color;
+				}
+			}
+		}
+
+		private bool DetectWinner(string[] TicBoard, int d)
+		{
+			if (TicBoard[Direction[d, 0]] == TicBoard[Direction[d, 1]] &&
+				TicBoard[Direction[d, 1]] == TicBoard[Direction[d, 2]])
+			{
+				if (TicBoard[Direction[d, 0]] == "O" || TicBoard[Direction[d, 0]] == "X")
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 	}
 }
