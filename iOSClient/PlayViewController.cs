@@ -181,7 +181,9 @@ namespace iOSClient
 
 				if (aMove.isTie) {
 					OutputLabel.Text = "Tied Game";
-					OutputLabel.TextColor = UIColor.LightGray;
+					Bone.TintColor = Btwo.TintColor = Bthree.TintColor = 
+						Bfour.TintColor = Bfive.TintColor = Bsix.TintColor = 
+						Bseven.TintColor = Beight.TintColor = Bnine.TintColor = UIColor.LightGray;
 				} else if (aMove.isWin) {
 					if (aMove.winnerResult == "X") {
 						OutputLabel.Text = "<-Winner";
