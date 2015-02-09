@@ -60,6 +60,10 @@ namespace iOSClient
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel FirstLabel2 { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel FirstPiece { get; set; }
 
 		[Outlet]
@@ -73,6 +77,10 @@ namespace iOSClient
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel SecondLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel SecondLabel2 { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -168,6 +176,10 @@ namespace iOSClient
 				FirstLabel.Dispose ();
 				FirstLabel = null;
 			}
+			if (FirstLabel2 != null) {
+				FirstLabel2.Dispose ();
+				FirstLabel2 = null;
+			}
 			if (FirstPiece != null) {
 				FirstPiece.Dispose ();
 				FirstPiece = null;
@@ -183,6 +195,10 @@ namespace iOSClient
 			if (SecondLabel != null) {
 				SecondLabel.Dispose ();
 				SecondLabel = null;
+			}
+			if (SecondLabel2 != null) {
+				SecondLabel2.Dispose ();
+				SecondLabel2 = null;
 			}
 			if (SecondPiece != null) {
 				SecondPiece.Dispose ();

@@ -50,11 +50,13 @@ namespace iOSClient
 				URLText.Text = MobileServiceHelper.DotNetURL;
 				KeyText.Text = MobileServiceHelper.DotNetKey;
 				PlayViewController.serviceImple = ".NET";
+				PlayViewController.serviceColor = UIColor.Red;
 				break;
 				case 1:
 				URLText.Text = MobileServiceHelper.JavaScriptURL;
 				KeyText.Text = MobileServiceHelper.JavaScriptKey;
 				PlayViewController.serviceImple = "JavaScript";
+				PlayViewController.serviceColor = UIColor.FromRGB(255, 192, 203);		//Pink
 				break;
 				case 2:
 				URLText.Text = "";

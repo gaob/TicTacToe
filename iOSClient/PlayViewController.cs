@@ -12,6 +12,7 @@ namespace iOSClient
 		public static string humanSymbol = "X";
 		public static string serviceSymbol = "O";
 		public static string serviceImple = ".NET";
+		public static UIColor serviceColor = UIColor.Red;
 		private string XImage = "x@2x.png";
 		private string OImage = "o@2x.png";
 
@@ -42,7 +43,10 @@ namespace iOSClient
 				SecondLabel.Text = "Human";
 				SecondLabel.TextColor = UIColor.Yellow;
 				FirstPiece.Text = serviceSymbol;
-				FirstLabel.Text = serviceImple;
+				FirstLabel.Text = "Azure";
+				FirstLabel.TextColor = UIColor.Blue;
+				FirstLabel2.Text = serviceImple;
+				FirstLabel2.TextColor = serviceColor;
 
 				try {
 					ShowServicePiece();
@@ -62,7 +66,10 @@ namespace iOSClient
 				}
 			} else {
 				SecondPiece.Text = serviceSymbol;
-				SecondLabel.Text = serviceImple;
+				SecondLabel.Text = "Azure";
+				SecondLabel.TextColor = UIColor.Blue;
+				SecondLabel2.Text = serviceImple;
+				SecondLabel2.TextColor = serviceColor;
 				FirstPiece.Text = humanSymbol;
 				FirstLabel.Text = "Human";
 				FirstLabel.TextColor = UIColor.Yellow;
@@ -95,12 +102,12 @@ namespace iOSClient
 
 		void ShowFirstPiece(bool show)
 		{
-			FirstPiece.Hidden = FirstLabel.Hidden = !show;
+			FirstPiece.Hidden = FirstLabel.Hidden = FirstLabel2.Hidden = !show;
 		}
 
 		void ShowSecondPiece(bool show)
 		{
-			SecondPiece.Hidden = SecondLabel.Hidden = !show;
+			SecondPiece.Hidden = SecondLabel.Hidden = SecondLabel2.Hidden = !show;
 		}
 
 		partial void Bone_TouchUpInside (UIButton sender)

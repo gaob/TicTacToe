@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" minimumFontSize="10" id="14" fixedFrame="YES" shadowOffsetHeight="0" enabled="YES">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="14" fixedFrame="YES" shadowOffsetHeight="0" enabled="YES">
                                 <rect key="frame" x="20" y="479" width="280" height="21"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -308,6 +308,22 @@
                                     <action selector="BQuitGame_TouchUpInside:" destination="128" id="473" eventType="touchUpInside"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="501" fixedFrame="YES">
+                                <rect key="frame" x="8" y="155" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="502" fixedFrame="YES">
+                                <rect key="frame" x="244" y="155" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </view>
                     <connections>
@@ -328,6 +344,8 @@
                         <outlet property="FirstPiece" destination="460" id="name-outlet-460"/>
                         <outlet property="FirstLabel" destination="461" id="name-outlet-461"/>
                         <outlet property="BQuitGame" destination="472" id="name-outlet-472"/>
+                        <outlet property="FirstLabel2" destination="501" id="name-outlet-501"/>
+                        <outlet property="SecondLabel2" destination="502" id="name-outlet-502"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="130" userLabel="First Responder" sceneMemberID="firstResponder"/>
