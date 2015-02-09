@@ -16,14 +16,6 @@ namespace iOSClient
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton CallAPIGetButton { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton CallAPIPostButton { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel KeyLabel { get; set; }
 
 		[Outlet]
@@ -33,10 +25,6 @@ namespace iOSClient
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UISegmentedControl MobileServiceSegments { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel OutputLabel { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -68,14 +56,6 @@ namespace iOSClient
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (CallAPIGetButton != null) {
-				CallAPIGetButton.Dispose ();
-				CallAPIGetButton = null;
-			}
-			if (CallAPIPostButton != null) {
-				CallAPIPostButton.Dispose ();
-				CallAPIPostButton = null;
-			}
 			if (KeyLabel != null) {
 				KeyLabel.Dispose ();
 				KeyLabel = null;
@@ -87,10 +67,6 @@ namespace iOSClient
 			if (MobileServiceSegments != null) {
 				MobileServiceSegments.Dispose ();
 				MobileServiceSegments = null;
-			}
-			if (OutputLabel != null) {
-				OutputLabel.Dispose ();
-				OutputLabel = null;
 			}
 			if (StartButton != null) {
 				StartButton.Dispose ();
