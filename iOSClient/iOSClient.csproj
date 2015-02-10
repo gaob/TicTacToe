@@ -86,17 +86,17 @@
     <Compile Include="MobileServiceHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
-    <Compile Include="PlayViewController.cs" />
-    <Compile Include="PlayViewController.designer.cs">
-      <DependentUpon>PlayViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\MoveResponse.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="iOSClientViewController.designer.cs">
+    <Compile Include="Controller\iOSClientViewController.cs" />
+    <Compile Include="Controller\iOSClientViewController.designer.cs">
       <DependentUpon>iOSClientViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="iOSClientViewController.cs" />
+    <Compile Include="Controller\PlayViewController.cs" />
+    <Compile Include="Controller\PlayViewController.designer.cs">
+      <DependentUpon>PlayViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\o%402x.png" />
@@ -142,5 +142,6 @@
   </Target>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Controller\" />
   </ItemGroup>
 </Project>
