@@ -196,6 +196,8 @@ namespace iOSClient
 				if (aMove.isTie) {
 					OutputLabel.Text = "Tied Game";
 					SetAllSymbol(UIColor.LightGray);
+					ShowFirstPiece(true);
+					ShowSecondPiece(true);
 					Bcover.Hidden = false;
 				} else if (aMove.isWin) {
 					if (aMove.winnerResult == "X") {
