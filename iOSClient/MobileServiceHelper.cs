@@ -8,10 +8,10 @@ namespace iOSClient
 
         private static MobileServiceHelper _instance;
 
-		public const string DotNetURL = @"https://dotnetbackend.azure-mobile.net/";
-		public const string DotNetKey = @"pclFSlQkkDCfWjzjzwBevXDNqNewdw99";
-		public const string JavaScriptURL = @"https://javascriptbackend.azure-mobile.net/";
-		public const string JavaScriptKey = @"BArzkABLhgZnNhjvxnESoRpSjEHQEA10";
+		public const string DotNetURL = @"https://dotnet1.azure-mobile.net/";
+		public const string DotNetKey = @"SqbNCQdEyoxKVoDUwqCZeOPSaSwqXd35";
+		public const string JavaScriptURL = @"https://javascript1.azure-mobile.net/";
+		public const string JavaScriptKey = @"PIEGJZrDOjaRNrktRnavFAGvUJPiOj51";
 		public string applicationURL = DotNetURL;
 		public string applicationKey = DotNetKey;
 

@@ -250,7 +250,7 @@ namespace iOSClient
 														  eight = thisBoard[8],
 														  nine = thisBoard[9]});
 				// Make the call to the hello resource asynchronously using POST verb
-				var resultJson = await client.ServiceClient.InvokeApiAsync("hello", payload);
+				var resultJson = await client.ServiceClient.InvokeApiAsync("executemove", payload);
 
 				// Understanding color in iOS http://www.iosing.com/2011/11/uicolor-understanding-colour-in-ios/
 				// A dark green: http://www.colorpicker.com/
