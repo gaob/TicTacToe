@@ -37,7 +37,7 @@ namespace iOSClient
 			for (int i=0;i<=9;i++) {
 				TicBoard[i] = "?";
 			}
-				
+
 			if (serviceSymbol == "X") {
 				SecondPiece.Text = humanSymbol;
 				SecondLabel.Text = "Human";
@@ -87,6 +87,8 @@ namespace iOSClient
 				ShowFirstPiece (false);
 				ShowSecondPiece (true);
 			}
+
+			AllowInteractions (false);
 		}
 
 		void ShowHumanPiece ()
@@ -98,6 +100,8 @@ namespace iOSClient
 				ShowFirstPiece (true);
 				ShowSecondPiece (false);
 			}
+
+			AllowInteractions (true);
 		}
 
 		void ShowFirstPiece(bool show)
@@ -108,6 +112,13 @@ namespace iOSClient
 		void ShowSecondPiece(bool show)
 		{
 			SecondPiece.Hidden = SecondLabel.Hidden = SecondLabel2.Hidden = !show;
+		}
+
+		void AllowInteractions(bool allow)
+		{
+			Bone.UserInteractionEnabled = Btwo.UserInteractionEnabled = Bthree.UserInteractionEnabled = 
+				Bfour.UserInteractionEnabled = Bfive.UserInteractionEnabled = Bsix.UserInteractionEnabled = 
+					Bseven.UserInteractionEnabled = Beight.UserInteractionEnabled = Bnine.UserInteractionEnabled = allow;
 		}
 
 		partial void Bone_TouchUpInside (UIButton sender)
