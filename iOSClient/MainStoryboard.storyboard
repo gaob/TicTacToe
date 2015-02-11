@@ -324,7 +324,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="514" fixedFrame="YES" hidden="YES">
+                            <button contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="514" fixedFrame="YES" opaque="NO" hidden="YES">
                                 <rect key="frame" x="2" y="66" width="316" height="502"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="">
@@ -375,5 +375,14 @@
         <image name="smallO.png" width="40" height="40"/>
         <image name="x.png" width="88" height="88"/>
         <image name="playTab.png" width="52" height="52"/>
+        <image name="segmentDivider.png" width="4" height="40"/>
+        <image name="win1.png" width="660" height="1047"/>
+        <image name="win2.png" width="660" height="1047"/>
+        <image name="win3.png" width="659" height="1046"/>
+        <image name="win4.png" width="659" height="1046"/>
+        <image name="win5.png" width="659" height="1047"/>
+        <image name="win6.png" width="659" height="1047"/>
+        <image name="win7.png" width="659" height="1046"/>
+        <image name="win8.png" width="659" height="1047"/>
     </resources>
 </document>

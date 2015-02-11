@@ -102,6 +102,14 @@
     <BundleResource Include="Resources\o%402x.png" />
     <BundleResource Include="Resources\x%402x.png" />
     <BundleResource Include="Resources\playTab%402x.png" />
+    <BundleResource Include="Resources\win2.png" />
+    <BundleResource Include="Resources\win1.png" />
+    <BundleResource Include="Resources\win3.png" />
+    <BundleResource Include="Resources\win4.png" />
+    <BundleResource Include="Resources\win5.png" />
+    <BundleResource Include="Resources\win6.png" />
+    <BundleResource Include="Resources\win7.png" />
+    <BundleResource Include="Resources\win8.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.WindowsAzure.Mobile.SQLiteStore">

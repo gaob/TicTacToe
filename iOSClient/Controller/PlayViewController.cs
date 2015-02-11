@@ -20,6 +20,7 @@ namespace iOSClient
 		private string[] TicBoard;
 
 		private int[,] Direction = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 1, 4, 7 }, { 2, 5, 8 }, { 3, 6, 9 }, { 1, 5, 9 }, { 3, 5, 7 } };
+		private string[] lineImage = new string[] {"win1.png", "win2.png", "win3.png", "win4.png", "win5.png", "win6.png", "win7.png", "win8.png"};
 
 		public PlayViewController (IntPtr handle) : base (handle)
 		{
@@ -360,6 +361,8 @@ namespace iOSClient
 					getButtonFrom(Direction[i, 0]).TintColor = color;
 					getButtonFrom(Direction[i, 1]).TintColor = color;
 					getButtonFrom(Direction[i, 2]).TintColor = color;
+					Bcover.SetImage (UIImage.FromFile (lineImage [i]), UIControlState.Normal);
+					break;
 				}
 			}
 		}
