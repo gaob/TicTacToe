@@ -2,10 +2,16 @@
 
 namespace iOSClient
 {
+	/// <summary>
+	/// Class for move response from backend.
+	/// </summary>
 	public class MoveResponse
 	{
+		// Store the "move" of response.
 		public string moveResult { get; set; }
+		// Store the "winner" of response.
 		public string winnerResult { get; set; }
+		// If move == "O" or "X", then has move.
 		public bool hasMove { get { return moveResult != "n/a"; } }
 		public bool isTie { get { return winnerResult == "Tie"; } }
 		public bool isWin { get { return winnerResult == "O" || winnerResult == "X"; } }
@@ -21,6 +27,10 @@ namespace iOSClient
 			return moveResult + ":" + winnerResult;
 		}
 
+		/// <summary>
+		/// Get the position based on the move string.
+		/// </summary>
+		/// <returns>The move position.</returns>
 		public int getMoveNumber()
 		{
 			switch (moveResult) {
