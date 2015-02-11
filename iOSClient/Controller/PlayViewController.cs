@@ -11,12 +11,16 @@ namespace iOSClient
 	{
 		public static string humanSymbol = "X";
 		public static string serviceSymbol = "O";
+		// Store the backend implementation symbol, "JavaScript" or ".NET". Changed in IOSClientView.
 		public static string serviceImple = ".NET";
+		// Store the color to backend implementation, ".NET" == Red, "JavaScript" == Pink. Changed in IOSClientView.
 		public static UIColor serviceColor = UIColor.Red;
+		// Store the default image for O and X game pieces.
 		private string XImage = "x@2x.png";
 		private string OImage = "o@2x.png";
 
 		private MobileServiceHelper client;
+		// Store the board from index 1 to index 9, each position has "O", "X", or "?".
 		private string[] TicBoard;
 
 		private int[,] Direction = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 1, 4, 7 }, { 2, 5, 8 }, { 3, 6, 9 }, { 1, 5, 9 }, { 3, 5, 7 } };

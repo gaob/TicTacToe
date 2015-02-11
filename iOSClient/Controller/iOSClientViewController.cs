@@ -36,10 +36,15 @@ namespace iOSClient
             // Perform any additional setup after loading the view, typically from a nib.
             client = MobileServiceHelper.DefaultService;
 
+			// Set the URL textbox and Key textbox to contain the default URL and Key.
 			URLText.Text = client.applicationURL;
 			KeyText.Text = client.applicationKey;
         }
 
+		/// <summary>
+		/// The backend selector event.
+		/// </summary>
+		/// <param name="sender">Sender.</param>
 		partial void segmentValueChanged (UISegmentedControl sender)
 		{
 			int selectedID = sender.SelectedSegment;
@@ -70,6 +75,10 @@ namespace iOSClient
 			}
 		}
 
+		/// <summary>
+		/// The first player selector event.
+		/// </summary>
+		/// <param name="sender">Sender.</param>
 		partial void firstPlayerValueChanged (UISegmentedControl sender)
 		{
 			int selectedID = sender.SelectedSegment;
@@ -86,8 +95,13 @@ namespace iOSClient
 			}
 		}
 
+		/// <summary>
+		/// The Start Game button event.
+		/// </summary>
+		/// <param name="sender">Sender.</param>
 		partial void StartButton_TouchUpInside (UIButton sender)
 		{
+			// First, based on the URL textbox and Key textbox to select the correct backend.
 			try
 			{
 				client.selectUser(URLText.Text, KeyText.Text);
@@ -100,6 +114,7 @@ namespace iOSClient
 				return;
 			}
 
+			// Push the Game Board View.
 			PlayViewController aViewController = this.Storyboard.InstantiateViewController("PlayViewController") as PlayViewController;
 			if (aViewController != null) {
 				this.NavigationController.PushViewController(aViewController, true);
